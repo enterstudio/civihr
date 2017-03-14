@@ -543,6 +543,7 @@ class CRM_Hrjobcontract_Upgrader extends CRM_Hrjobcontract_Upgrader_Base {
     $this->upgrade_1017();
     $this->upgrade_1020();
     $this->upgrade_1025();
+    $this->upgrade_1026();
   }
 
   function upgrade_1001() {
@@ -1062,7 +1063,24 @@ class CRM_Hrjobcontract_Upgrader extends CRM_Hrjobcontract_Upgrader_Base {
       // Skip this
     }
   }
-  
+
+  /**
+   * Concats data in pay_grade field to pay_scale field, since pay_grade is to 
+   * be removed.
+   */
+  public function upgrade_1026() {
+    $query = '
+      UPDATE civicrm_hrpay_scale
+      SET pay_scale = CONCAT(pay_scale, \' - \', pay_grade)
+    ';
+    CRM_Core_DAO::executeQuery($query);
+
+    $dropQuery = 'ALTER TABLE `civicrm_hrpay_scale` DROP `pay_grade`';
+    CRM_Core_DAO::executeQuery($dropQuery);
+
+    return true;
+  }
+
   function decToFraction($fte) {
     $fteDecimalPart = explode('.', $fte);
     $array = array();
