@@ -1065,8 +1065,8 @@ class CRM_Hrjobcontract_Upgrader extends CRM_Hrjobcontract_Upgrader_Base {
   }
 
   /**
-   * Concats data in pay_grade field to pay_scale field, since pay_grade is to 
-   * be removed.
+   * Concats data in pay_grade field to pay_scale field and removes pay_grade 
+   * field from datbase.
    */
   public function upgrade_1026() {
     $query = "
