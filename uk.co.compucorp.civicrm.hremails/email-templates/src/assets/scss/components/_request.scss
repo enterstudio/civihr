@@ -1,7 +1,8 @@
 .request-attachment {
 
   &-name {
-    font-weight: bold;
+    color: $gray-darker;
+    font-weight: 600;
   }
 }
 
@@ -18,7 +19,8 @@
   padding: $callout-padding;
 
   &-header {
-    font-weight: bold;
+    color: $gray-darker;
+    font-weight: 600;
     margin-bottom: 10px;
     Margin-bottom: 10px;
   }
@@ -28,7 +30,7 @@
   margin: -#{$callout-padding};
 
   > .request-comment:not(:last-child) {
-    border-bottom: 1px solid $medium-gray;
+    border-bottom: 1px solid $gray-light;
   }
 }
 
@@ -41,8 +43,14 @@
   }
 
   dt {
+    color: $gray-darker;
     float: left;
-    font-weight: bold;
+    font-weight: 600;
     width: 150px;
+  }
+
+  dd:not(:last-child) {
+    margin-bottom: 10px;
+    Margin-bottom: 10px;
   }
 }
