@@ -8,6 +8,10 @@ $email-heading-line-height: 40px;
   line-height: $email-heading-line-height;
 }
 
+.email-logo {
+  width: 100px;
+}
+
 .email-title {
   border-left: 5px solid $brand-primary;
   font-size: $font-size-h2;
