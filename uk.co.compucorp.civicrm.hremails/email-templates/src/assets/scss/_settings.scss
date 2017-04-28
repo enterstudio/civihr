@@ -16,22 +16,25 @@
 // 1. Global
 // ---------
 
-$primary-color: #2199e8;
-$secondary-color: #777777;
-$success-color: #3adb76;
-$warning-color: #ffae00;
-$alert-color: #ec5840;
-$light-gray: #f3f3f3;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+// Matching the colors with the ones provided by Shoreditch
+$primary-color:   $brand-primary;
+$secondary-color: $gray-light;
+$success-color:   $brand-success;
+$warning-color:   $brand-warning;
+$alert-color:     $brand-danger;
+$light-gray:      $gray-lighter;
+$medium-gray:     $gray-dark;
+$dark-gray:       $gray-darker;
+$white:           $crm-white;
+$body-background: $crm-background;
+
 $black: #0a0a0a;
-$white: #fefefe;
 $pre-color: #ff6908;
+
 $global-width: 580px;
 $global-width-small: 95%;
 $global-gutter: 16px;
-$body-background: $light-gray;
-$container-background: $white;
+$container-background: transparent;
 $global-padding: 16px;
 $global-margin: 16px;
 $global-radius: 3px;
@@ -120,7 +123,7 @@ $button-rounded: $global-rounded;
 
 $callout-background: $white;
 $callout-background-fade: 85%;
-$callout-padding: 10px;
+$callout-padding: 20px;
 $callout-margin-bottom: $global-margin;
 $callout-border: 1px solid darken($callout-background, 20%);
 $callout-border-secondary: 1px solid darken($secondary-color, 20%);
