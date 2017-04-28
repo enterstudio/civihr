@@ -7,9 +7,9 @@
 
 .request__attachments {
 
-  > .request__attachment:not(:first-child) {
-    margin-top: 10px;
-    Margin-top: 10px;
+  > .request__attachment:not(:last-child) {
+    margin-bottom: 10px;
+    Margin-bottom: 10px;
   }
 }
 
@@ -25,10 +25,10 @@
 }
 
 .request__comments {
-  padding: 0 !important;
+  margin: -#{$callout-padding};
 
-  > .request__comment:not(:first-child) {
-    border-top: 1px solid $medium-gray;
+  > .request__comment:not(:last-child) {
+    border-bottom: 1px solid $medium-gray;
   }
 }
 
