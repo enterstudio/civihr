@@ -5,10 +5,6 @@ th.callout-inner {
 .callout-header {
   background: $panel-default-heading-bg;
   padding: $panel-heading-padding;
-
-  // Pushes back against the callout padding
-  margin: -#{$callout-padding} -#{$callout-padding} $callout-padding -#{$callout-padding};
-  Margin: -#{$callout-padding} -#{$callout-padding} $callout-padding -#{$callout-padding};
 }
 
 .callout-title {
