@@ -14,17 +14,19 @@
     <table class="body">
       <tr>
         <td class="center" align="center" valign="top">
-          <center>
-            <container>
+          <center class="email">
+            <!-- header -->
+            <container class="email-heading">
               <row class="collapse">
                 <columns small="12" large="6">
-                  <h1>CiviHR {{request-type}} Request</h1>
+                  <h1 class="email-title">CiviHR {{request-type}} Request</h1>
                 </columns>
                 <columns small="12" large="6">
-                  <p class="small-text-left text-right">Mon 26 January 2015</p>
+                  <p class="email-date small-text-left text-right">Mon 26 January 2015</p>
                 </columns>
               </row>
             </container>
+            <!-- body -->
             <container>
               {{> body}}
             </container>
