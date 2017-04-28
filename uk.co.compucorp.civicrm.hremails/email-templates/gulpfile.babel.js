@@ -12,6 +12,9 @@ import path     from 'path';
 import merge    from 'merge-stream';
 import beep     from 'beepbeep';
 import colors   from 'colors';
+import scssRoot from 'civicrm-scssroot';
+
+const civicrmScssRoot = scssRoot();
 
 const $ = plugins();
 
@@ -24,7 +27,7 @@ var CONFIG;
 
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build',
-  gulp.series(clean, pages, sass, images, inline));
+  gulp.series(clean, pages, sassSync, sass, images, inline));
 
 // Build emails, run the server, and watch for file changes
 gulp.task('default',
@@ -68,12 +71,18 @@ function resetPages(done) {
   done();
 }
 
+// Updates the local SCSS cache
+function sassSync(done) {
+  civicrmScssRoot.updateSync();
+  done();
+}
+
 // Compile Sass into CSS
 function sass() {
   return gulp.src('src/assets/scss/app.scss')
     .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
     .pipe($.sass({
-      includePaths: ['node_modules/foundation-emails/scss']
+      includePaths: ['node_modules/foundation-emails/scss', civicrmScssRoot.getPath()]
     }).on('error', $.sass.logError))
     .pipe($.if(PRODUCTION, $.uncss(
       {
@@ -109,7 +118,7 @@ function server(done) {
 function watch() {
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, inline, browser.reload));
   gulp.watch(['src/layouts/**/*', 'src/partials/**/*']).on('all', gulp.series(resetPages, pages, inline, browser.reload));
-  gulp.watch(['../scss/**/*.scss', 'src/assets/scss/**/*.scss']).on('all', gulp.series(resetPages, sass, pages, inline, browser.reload));
+  gulp.watch(['../scss/**/*.scss', 'src/assets/scss/**/*.scss']).on('all', gulp.series(resetPages, sassSync, sass, pages, inline, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
 }
 
