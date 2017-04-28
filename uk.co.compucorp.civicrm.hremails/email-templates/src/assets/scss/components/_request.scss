@@ -1,39 +1,39 @@
-.request__attachment {
+.request-attachment {
 
-  &__name {
+  &-name {
     font-weight: bold;
   }
 }
 
-.request__attachments {
+.request-attachments {
 
-  > .request__attachment:not(:last-child) {
+  > .request-attachment:not(:last-child) {
     margin-bottom: 10px;
     Margin-bottom: 10px;
   }
 }
 
 
-.request__comment {
+.request-comment {
   padding: $callout-padding;
 
-  &__header {
+  &-header {
     font-weight: bold;
     margin-bottom: 10px;
     Margin-bottom: 10px;
   }
 }
 
-.request__comments {
+.request-comments {
   margin: -#{$callout-padding};
 
-  > .request__comment:not(:last-child) {
+  > .request-comment:not(:last-child) {
     border-bottom: 1px solid $medium-gray;
   }
 }
 
 
-.request__data {
+.request-data {
 
   dl {
     margin: 0;
