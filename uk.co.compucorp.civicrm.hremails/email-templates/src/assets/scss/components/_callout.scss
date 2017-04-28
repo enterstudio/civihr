@@ -1,0 +1,18 @@
+.callout {
+
+  &-header {
+    background: $panel-default-heading-bg;
+    padding: $panel-heading-padding;
+
+    // Pushes back against the callout padding
+    margin: -#{$callout-padding} -#{$callout-padding} $callout-padding -#{$callout-padding};
+    Margin: -#{$callout-padding} -#{$callout-padding} $callout-padding -#{$callout-padding};
+  }
+
+  &-title {
+    color: $panel-default-text;
+    font-size: $font-size-h3;
+    margin: 0;
+    Margin: 0;
+  }
+}

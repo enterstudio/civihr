@@ -6,6 +6,7 @@ request-type: Leave
 
 <div class="request">
   <callout class="request__data">
+    {{> callout-header title="Leave Request Type"}}
     <dl>
       <dt>Status:</dt>
       <dd>Approval Required</dd>
@@ -20,6 +21,7 @@ request-type: Leave
   <button href="#" class="expanded alert">View This Request</button>
   <hr>
   <callout>
+    {{> callout-header title="Request comments"}}
     <div class="request__comments">
       <div class="request__comment">
         <div class="request__comment__header">
@@ -43,6 +45,7 @@ request-type: Leave
   </callout>
   <hr>
   <callout>
+    {{> callout-header title="Other files recorded in this request"}}
     <div class="request__attachments">
       <div class="request__attachment">
         <span class="request__attachment__name">File 1</span>: Added 10/1/2015 22.01
